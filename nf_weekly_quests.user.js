@@ -106,6 +106,20 @@
     console.log('location.href', window.location.href);
     console.log('document.referrer', document.referrer);
 
+    function generateQuestBoxesHtml() {
+        let questBoxesHtml = '';
+
+        WEEKLY_QUESTS.forEach(week => {
+            questBoxesHtml += '\n<h2>' + week.title + '</h2>\n';
+
+            week.quests.forEach(questKey => {
+                questBoxesHtml += '<div>' + questBox(QUESTS[questKey].title, QUESTS[questKey].id, QUESTS[questKey].xp, QUESTS[questKey].description, QUESTS[questKey].classes) + '</div>\n';
+            });
+        });
+
+        return questBoxesHtml;
+    }
+
     document.addEventListener('DOMContentLoaded', function(event) {
         console.log('DOM fully loaded and parsed');
 
@@ -118,20 +132,38 @@
             document.querySelector('#navlist .nav-my-quests').classList.remove('current-menu-item');
             document.querySelector('#navlist .nav-weekly-quests').classList.add('current-menu-item');
             document.querySelector('.fx-content-title').innerHTML = 'Weekly Quests';
-            document.querySelector('.fx-inner-cont').innerHTML = `
-                <h2>Week One</h2>
-                <div>${questBox(QUESTS.BEFORE_PHOTOS.title, QUESTS.BEFORE_PHOTOS.id, QUESTS.BEFORE_PHOTOS.xp, QUESTS.BEFORE_PHOTOS.description, QUESTS.BEFORE_PHOTOS.classes)}</div>
-                <div>${questBox(QUESTS.MEASUREMENTS.title, QUESTS.MEASUREMENTS.id, QUESTS.MEASUREMENTS.xp, QUESTS.MEASUREMENTS.description, QUESTS.MEASUREMENTS.classes)}</div>
-                <div>${questBox(QUESTS.FIND_BIG_WHY.title, QUESTS.FIND_BIG_WHY.id, QUESTS.FIND_BIG_WHY.xp, QUESTS.FIND_BIG_WHY.description, QUESTS.FIND_BIG_WHY.classes)}</div>
-                <div>${questBox(QUESTS.SHARE_BIG_WHY.title, QUESTS.SHARE_BIG_WHY.id, QUESTS.SHARE_BIG_WHY.xp, QUESTS.SHARE_BIG_WHY.description, QUESTS.SHARE_BIG_WHY.classes)}</div>
-                <div>${questBox(QUESTS.WALK_TO_MORDOR.title, QUESTS.WALK_TO_MORDOR.id, QUESTS.WALK_TO_MORDOR.xp, QUESTS.WALK_TO_MORDOR.description, QUESTS.WALK_TO_MORDOR.classes)}</div>
-                <div>${questBox(QUESTS.FOOD_LOG.title, QUESTS.FOOD_LOG.id, QUESTS.FOOD_LOG.xp, QUESTS.FOOD_LOG.description, QUESTS.FOOD_LOG.classes)}</div>
-            `;
+            document.querySelector('.fx-inner-cont').innerHTML = generateQuestBoxesHtml();
 
             document.querySelector('.progress-big').remove();
             document.querySelector('.qh-showhide').remove();
         }
     });
+
+    const WEEKLY_QUESTS = [
+        {
+            title: 'Week One',
+            quests: [
+                'BEFORE_PHOTOS',
+                'MEASUREMENTS',
+                'FIND_BIG_WHY',
+                'SHARE_BIG_WHY',
+                'WALK_TO_MORDOR',
+                'FOOD_LOG',
+            ],
+        },
+        {
+            title: 'Week Two',
+            quests: [
+                'ART_OF_GOALS',
+                'START_EPIC_QUEST',
+                'SHARE_EPIC_QUEST',
+                'GIMME_LOOT',
+                'BENCHMARK_TEST',
+                'READ_FITNESS',
+                'DETERMINE_DIET_LEVEL',
+            ],
+        },
+    ];
 
     const QUESTS = {
         BEFORE_PHOTOS: {
@@ -175,6 +207,55 @@
             xp: 60,
             description: '<p>To complete this quest, complete a food log for 3 days.</p>',
             classes: 'academy fitness rebel',
+        },
+        ART_OF_GOALS: {
+            title: 'Mindset: The Art of Goal Setting',
+            id: 1026922,
+            xp: 60,
+            description: '<p>To complete this quest, you’ll need to break down your goals into at least 5 specific, measurable segments based on the examples and instructions in the Academy. Keep them specific, realistic, and easily able to say “Yah” or “Nay” at the end of the day.</p>',
+            classes: 'academy mindset',
+        },
+        START_EPIC_QUEST: {
+            title: 'Mindset: Start Your Epic Quest',
+            id: 1026925,
+            xp: 60,
+            description: '<p>To complete this quest, take the goals you created in the “Break Down Those Goals” Quest and put them in your own personal Epic Quest (<a href="https://www.nerdfitness.com/level-up/my-epic-quest/" target="_blank">found here</a>).</p>',
+            classes: 'academy mindset',
+        },
+        SHARE_EPIC_QUEST: {
+            title: 'Mindset: Share Your Epic Quest',
+            id: 1026928,
+            xp: 60,
+            description: '<p>To complete this quest, share your EQ profile with the people you are questing with. This could be your family, friends, or the NFA Facebook Group</p>',
+            classes: 'academy mindset',
+        },
+        GIMME_LOOT: {
+            title: 'Mindset: Gimme The Loot!',
+            id: 1026931,
+            xp: 25,
+            description: '<p>To complete this quest, first brainstorm some healthy loot (rewards), choose a specific goal you’ve broken down and attach a realistic timeframe to it to unlock your new “loot”.</p>',
+            classes: 'academy mindset',
+        },
+        BENCHMARK_TEST: {
+            title: 'Fitness: Take the Benchmark Test',
+            id: 1027303,
+            xp: 25,
+            description: '<p>To complete this quest, complete the benchmark test and find your starting workout.</p>',
+            classes: 'academy mindset',
+        },
+        READ_FITNESS: {
+            title: 'Fitness: Read Workouts FAQ and Getting Started and Leveling Up modules',
+            id: 1027306,
+            xp: 25,
+            description: '<p>This is an easy one! To complete this quest, read over the Workouts FAQ and Getting Started and Leveling Up Modules</p>',
+            classes: 'academy fitness',
+        },
+        DETERMINE_DIET_LEVEL: {
+            title: 'Nutrition: Determine your starting NF Diet Level',
+            id: 1027042,
+            xp: 25,
+            description: '<p>To complete this quest, look at your logs from the last 3 days and determine what level of the NF Diet you are</p>',
+            classes: 'academy fitness',
         },
     };
 })();
