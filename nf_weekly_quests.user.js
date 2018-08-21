@@ -199,14 +199,14 @@
             id: 1027262,
             xp: 60,
             description: '<p>To complete this quest, go for an intentional walk of at least 5 minutes. Repeat consistently for a minimum of 7 consecutive days. That’s it – just 5 minutes a day minimum!</p><p><a href="https://academy.nerdfitness.com/path/can-you-walk-to-mordor/">Click here for more info on this quest.</a></p>',
-            classes: 'academy mindset',
+            classes: 'academy fitness rebel',
         },
         FOOD_LOG: {
             title: 'Nutrition: Create Your Food Log',
             id: 1027030,
             xp: 60,
             description: '<p>To complete this quest, complete a food log for 3 days.</p>',
-            classes: 'academy fitness rebel',
+            classes: 'academy nutrition',
         },
         ART_OF_GOALS: {
             title: 'Mindset: The Art of Goal Setting',
@@ -255,7 +255,7 @@
             id: 1027042,
             xp: 25,
             description: '<p>To complete this quest, look at your logs from the last 3 days and determine what level of the NF Diet you are</p>',
-            classes: 'academy fitness',
+            classes: 'academy nutrition',
         },
     };
 })();
