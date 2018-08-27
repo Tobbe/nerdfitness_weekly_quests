@@ -42,7 +42,15 @@
         return 'https://www.nerdfitness.com/wp-content/uploads/2016/08/academy-icon.png';
     }
 
-    function questBox(title, id, xp, description, classes) {
+    function questBox(title, id, xp, description, classes, completed) {
+        const statusImage = completed ?
+            'https://www.nerdfitness.com/wp-content/themes/NerdFitness/templates/images/graphics-00092.png' :
+            'https://www.nerdfitness.com/wp-content/themes/NerdFitness/templates/images/graphics-00090.png';
+        const completeButtonText = completed ? 'MARK NOT COMPLETE' : 'MARK COMPLETED!';
+        const completeButtonImage = completed ?
+            'https://www.nerdfitness.com/wp-content/themes/NerdFitness/templates/images/graphics-00031.png' :
+            'https://www.nerdfitness.com/wp-content/themes/NerdFitness/templates/images/graphics-00014.png';
+
         return`
             <div id="" class="quests-quests-block ${classes} all" style="display: block;">
                 <div class="quest-block">
@@ -54,7 +62,7 @@
                         <img src="${iconUrl(classes)}">
                         <div class="qh-right">
                             <div class="qh-star active" data-id="${id}"></div>
-                            <div class="qh-rect">${xp} xp<img style="float: right;" src="https://www.nerdfitness.com/wp-content/themes/NerdFitness/templates/images/graphics-00092.png"></div>
+                            <div class="qh-rect">${xp} xp<img style="float: right;" src="${statusImage}"></div>
                         </div>
                     </div>
                     <div class="quest-body-block">
@@ -64,7 +72,7 @@
                                 <p></p>
                                 ${description}
                                 <p></p>
-                                <div data-id="${id}" class="qh-complete" style="background-image: url(https://www.nerdfitness.com/wp-content/themes/NerdFitness/templates/images/graphics-00031.png);">MARK NOT COMPLETE</div>
+                                <div data-id="${id}" class="qh-complete" style="background-image: url(${completeButtonImage});">${completeButtonText}</div>
                             </div>
                         </div>
                         <div class="qh-scroll-up"><img src="https://www.nerdfitness.com/wp-content/themes/NerdFitness/templates/images/graphics-00043.png"></div>
@@ -106,14 +114,15 @@
     console.log('location.href', window.location.href);
     console.log('document.referrer', document.referrer);
 
-    function generateQuestBoxesHtml() {
+    function generateQuestBoxesHtml(questStatuses) {
         let questBoxesHtml = '';
 
         WEEKLY_QUESTS.forEach(week => {
             questBoxesHtml += '\n<h2>' + week.title + '</h2>\n';
 
             week.quests.forEach(questKey => {
-                questBoxesHtml += '<div>' + questBox(QUESTS[questKey].title, QUESTS[questKey].id, QUESTS[questKey].xp, QUESTS[questKey].description, QUESTS[questKey].classes) + '</div>\n';
+                const completed = questStatuses[QUESTS[questKey].id];
+                questBoxesHtml += '<div>' + questBox(QUESTS[questKey].title, QUESTS[questKey].id, QUESTS[questKey].xp, QUESTS[questKey].description, QUESTS[questKey].classes, completed) + '</div>\n';
             });
         });
 
@@ -129,14 +138,53 @@
         }
 
         if (weeklyQuestsPage()) {
-            document.querySelector('#navlist .nav-my-quests').classList.remove('current-menu-item');
-            document.querySelector('#navlist .nav-weekly-quests').classList.add('current-menu-item');
-            document.querySelector('.fx-content-title').innerHTML = 'Weekly Quests';
-            document.querySelector('.fx-inner-cont').innerHTML = generateQuestBoxesHtml();
+            statusPromise.then(questStatuses => {
+                document.querySelector('#navlist .nav-my-quests').classList.remove('current-menu-item');
+                document.querySelector('#navlist .nav-weekly-quests').classList.add('current-menu-item');
+                document.querySelector('.fx-content-title').innerHTML = 'Weekly Quests';
+                document.querySelector('.fx-inner-cont').innerHTML = generateQuestBoxesHtml(questStatuses);
 
-            document.querySelector('.progress-big').remove();
-            document.querySelector('.qh-showhide').remove();
+                document.querySelector('.progress-big').remove();
+                document.querySelector('.qh-showhide').remove();
+            });
         }
+    });
+
+    var url = 'https://www.nerdfitness.com/wp-admin/admin-ajax.php?action=alm_query_posts&query_type=standard&nonce=6bc113fe44&repeater=default&theme_repeater=null&cta=&comments=&post_type%5B%5D=nfq_quest&post_format=&category=&category__not_in=&tag=&tag__not_in=&taxonomy=nfq_quest_category&taxonomy_terms=academy&taxonomy_operator=&taxonomy_relation=&meta_key=&meta_value=&meta_compare=&meta_relation=&meta_type=&author=&year=&month=&day=&post_status=&order=DESC&orderby=date&post__in=&post__not_in=&exclude=&search=&custom_args=&posts_per_page=1500&page=0&offset=0&preloaded=false&seo_start_page=1&paging=false&previous_post=false&previous_post_id=&previous_post_taxonomy=&lang=&slug=my-quests&canonical_url=https%3A%2F%2Fwww.nerdfitness.com%2Flevel-up%2Fmy-quests%2F';
+
+    const statusPromise = new Promise((resolve, reject) => {
+        fetch(url)
+            .then(data => data.json())
+            .then(res => {
+                console.log('got all academy quests');
+
+                const quests = res.html.split('<?php');
+                const questStatuses = quests
+                    .reduce((reduced, quest) => {
+                        const idIndex = quest.indexOf('data-id="') + 'data-id="'.length;
+                        const idEndIndex = quest.indexOf('"', idIndex + 1);
+                        const id = quest.slice(idIndex, idEndIndex);
+                        let complete = false;
+
+                        if (quest.indexOf('q-complete') > 0) {
+                            complete = true;
+                        }
+
+                        if (id !== '') {
+                            reduced[id] = complete;
+                        }
+
+                        return reduced;
+                    }, {});
+
+                console.log('questStatuses', questStatuses);
+                resolve(questStatuses);
+            })
+            .catch(err => {
+                console.error('error');
+                console.error('err', err);
+                reject(err);
+            });
     });
 
     const WEEKLY_QUESTS = [
