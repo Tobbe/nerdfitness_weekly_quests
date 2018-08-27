@@ -211,6 +211,16 @@
                 'DETERMINE_DIET_LEVEL',
             ],
         },
+        {
+            title: 'Week Three',
+            quests: [
+                'BATCAVE_1',
+                'DREAM_TEAM',
+                'NO_LIQUID_CALORIES',
+                'WARMUP',
+                'COOLDOWN',
+            ],
+        }
     ];
 
     const QUESTS = {
@@ -305,5 +315,40 @@
             description: '<p>To complete this quest, look at your logs from the last 3 days and determine what level of the NF Diet you are</p>',
             classes: 'academy nutrition',
         },
+        BATCAVE_1: {
+            title: 'Mindset: NaNaNaNaNa BATCAVE!',
+            id: 1026934,
+            xp: 40,
+            description: '<p>To complete this quest, you’ll need to make 3 new changes to your daily environment that will remove steps to build a new healthy habit you’ve selected. You’ll also need to add 3 new barriers into your life to keep you from falling back on a old unhealthy habit you are replacing or limiting.</p>',
+            classes: 'academy mindset',
+        },
+        DREAM_TEAM: {
+            title: 'Mindset: Build Your Dream Team',
+            id: 1026943,
+            xp: 40,
+            description: '<p>To complete this quest, brainstorm an accountabilibuddy or two, identify larger groups of friends that can help lift you up, and learn the best ways to take advantage of the Nerd Fitness Community.</p>',
+            classes: 'academy mindset',
+        },
+        NO_LIQUID_CALORIES: {
+            title: 'Nutrition: Don\'t drink liquid calories',
+            id: 1027057,
+            xp: 60,
+            description: '<p>To complete this quest, do not consume any liquid that contains calories for one week. You can still have soda if it is diet soda, and you can still have coffee or tea if it does not contain cream or sugar.</p>',
+            classes: 'academy nutrition',
+        },
+        WARMUP: {
+            title: 'Fitness: Warm It Up',
+            id: 1027282,
+            xp: 40,
+            description: '<p>Choose one of our basic warm-up routines and practice each exercise. Modify any exercises that you need. Log your new modified warm-up somewhere accessible (workout journal, phone, etc…). Once you’ve practiced all the exercises at least once. You’ve completed the challenge!</p>',
+            classes: 'academy fitness',
+        },
+        COOLDOWN: {
+            title: 'Fitness: Cool It Down',
+            id: 1027285,
+            xp: 40,
+            description: '<p>Start with Staci’s basic Cool-Down Routine and PDFs. Practice each stretch in order. Modify any stretches you can’t do or select an alternative option from Steve’s alternative video. Log your new modified cool-down someplace accessible. Once you’ve done this, you’ve completed this quest too!</p>',
+            classes: 'academy fitness',
+        }
     };
 })();
