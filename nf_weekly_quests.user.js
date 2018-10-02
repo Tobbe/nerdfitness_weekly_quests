@@ -257,7 +257,16 @@
                 'WARMUP',
                 'COOLDOWN',
             ],
-        }
+        },
+        {
+            title: 'Week Four',
+            quests: [
+                'INSPIRATION',
+                'RECIPE_1',
+                'WORKOUT_SCHEDULE',
+                'TRY_WORKOUT',
+            ],
+        },
     ];
 
     const QUESTS = {
@@ -386,6 +395,34 @@
             xp: 40,
             description: '<p>Start with Staci’s basic Cool-Down Routine and PDFs. Practice each stretch in order. Modify any stretches you can’t do or select an alternative option from Steve’s alternative video. Log your new modified cool-down someplace accessible. Once you’ve done this, you’ve completed this quest too!</p>',
             classes: 'academy fitness',
-        }
+        },
+        INSPIRATION: {
+            title: 'Mindset: What Inspires You?',
+            id: 1026949,
+            xp: 25,
+            description: '<p>To complete this quest, think of one thing that inspires you, write it down on a piece of paper, print it out, draw a picture, make a collage, whatever!  Then put it where you can see it/read it often – on your bedroom door, bathroom mirror, or computer screen are great options.</p>',
+            classes: 'academy mindset',
+        },
+        RECIPE_1: {
+            title: 'Nutrition: Try a Nerd Fitness Recipe #1',
+            id: 1027063,
+            xp: 25,
+            description: '<p>To complete this quest, try a recipe from the Nerd Fitness recipe book!</p>',
+            classes: 'academy nutrition',
+        },
+        WORKOUT_SCHEDULE: {
+            title: 'Fitness: Schedule Your Workout Reminders',
+            id: 1027279,
+            xp: 25,
+            description: '<p>To complete this quest, Find your starting workout plan and identify how many workouts are in it (AB, ABC, or ABCD). Schedule at least the next 4 weeks in your calender, filling in each day with the letter of the workout (based on your plan). Set reminders in your phone or email to remind you the night before each workout and an hour before each workout.</p>',
+            classes: 'academy fitness',
+        },
+        TRY_WORKOUT: {
+            title: 'Fitness: Complete your first workout',
+            id: 1027342,
+            xp: 25,
+            description: '<p>To complete this quest, complete your first workout after the benchmark test.</p>',
+            classes: 'academy fitness',
+        },
     };
 })();
