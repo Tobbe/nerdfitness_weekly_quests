@@ -267,6 +267,14 @@
                 'TRY_WORKOUT',
             ],
         },
+        {
+            title: 'Week Five',
+            quests: [
+                'DURING_PHOTOS_1',
+                'NO_TIME',
+                'SUGAR_BEAST_1',
+            ],
+        },
     ];
 
     const QUESTS = {
@@ -423,6 +431,27 @@
             xp: 25,
             description: '<p>To complete this quest, complete your first workout after the benchmark test.</p>',
             classes: 'academy fitness',
+        },
+        DURING_PHOTOS_1: {
+            title: 'Mindset: Take Your During Photos and Measurements #1',
+            id: 1026872,
+            xp: 25,
+            description: '<p>This is a repeat of the "Snap Those Before Photos!" Quest – only to be completed one month into your journey.</p>',
+            classes: 'academy mindset',
+        },
+        NO_TIME: {
+            title: 'Mindset: I Don\'t Have Time',
+            id: 1026952,
+            xp: 40,
+            description: '<p>To complete this quest, take a look at three things you usually say you don’t have time for, and switch the phrase "I don\'t have time" to "It\'s not a priority". Think about how you can adjust your priorities – and make your new goals a priority!</p>',
+            classes: 'academy mindset',
+        },
+        SUGAR_BEAST_1: {
+            title: 'Nutrition: Defeat the Sugar Beast #1',
+            id: 1027081,
+            xp: 60,
+            description: '<p>Steps to complete this Sugar Level 1 quest:  First, make sure you are well stocked with a couple of your favorite fruits. Second, whenever you feel a sugar craving from candy, chocolate, dessert, sugary drinks, etc – reach for and consume your favorite fruit instead. Defeat 5 cravings in this manner and you’ve completed this quest. For this stage of our process, we are going to accept the sugar in the fruit consumption as a healthy alternative in order to establish better habits and routines around food and sugar in general.</p>',
+            classes: 'academy nutrition',
         },
     };
 })();
