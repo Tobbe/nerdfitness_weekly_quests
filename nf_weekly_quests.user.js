@@ -15,7 +15,14 @@
 (function() {
     'use strict';
 
-    GM_addStyle(`
+    function addStyle(css) {
+        const style = document.createElement('style');
+        style.type = 'text/css';
+        style.textContent = css;
+        document.head.appendChild(style);
+    }
+
+    addStyle(`
         #navlist .nav-weekly-quests a {
             color: #424242;
             text-align: center;
