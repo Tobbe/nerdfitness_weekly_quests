@@ -42,7 +42,7 @@
         return 'https://www.nerdfitness.com/wp-content/uploads/2016/08/academy-icon.png';
     }
 
-    function questBox(title, id, xp, description, classes, completed) {
+    function questBox(title, id, xp, description, classes, completed, starred) {
         const statusImage = completed ?
             'https://www.nerdfitness.com/wp-content/themes/NerdFitness/templates/images/graphics-00092.png' :
             'https://www.nerdfitness.com/wp-content/themes/NerdFitness/templates/images/graphics-00090.png';
@@ -50,6 +50,7 @@
         const completeButtonImage = completed ?
             'https://www.nerdfitness.com/wp-content/themes/NerdFitness/templates/images/graphics-00031.png' :
             'https://www.nerdfitness.com/wp-content/themes/NerdFitness/templates/images/graphics-00014.png';
+        const starredClasses = 'qh-star ' + (starred ? 'active' : '');
 
         return`
             <div id="" class="quests-quests-block ${classes} all" style="display: block;">
@@ -61,7 +62,7 @@
                         <p>${title}</p>
                         <img src="${iconUrl(classes)}">
                         <div class="qh-right">
-                            <div class="qh-star active" data-id="${id}"></div>
+                            <div class="${starredClasses}" data-id="${id}"></div>
                             <div class="qh-rect">${xp} xp<img style="float: right;" src="${statusImage}"></div>
                         </div>
                     </div>
@@ -125,8 +126,17 @@
             questBoxesHtml += '\n<h2>' + week.title + '</h2>\n';
 
             week.quests.forEach(questKey => {
-                const completed = questStatuses[QUESTS[questKey].id];
-                questBoxesHtml += '<div>' + questBox(QUESTS[questKey].title, QUESTS[questKey].id, QUESTS[questKey].xp, QUESTS[questKey].description, QUESTS[questKey].classes, completed) + '</div>\n';
+                questBoxesHtml += '<div>';
+                questBoxesHtml += questBox(
+                    QUESTS[questKey].title,
+                    QUESTS[questKey].id,
+                    QUESTS[questKey].xp,
+                    QUESTS[questKey].description,
+                    QUESTS[questKey].classes,
+                    questStatuses[QUESTS[questKey].id].complete,
+                    questStatuses[QUESTS[questKey].id].starred,
+                );
+                questBoxesHtml += '</div>\n';
             });
         });
 
@@ -174,13 +184,21 @@
                             const idEndIndex = quest.indexOf('"', idIndex + 1);
                             const id = quest.slice(idIndex, idEndIndex);
                             let complete = false;
+                            let starred = false;
 
                             if (quest.indexOf('q-complete') > 0) {
                                 complete = true;
                             }
 
+                            if (quest.indexOf('qh-star active') > 0) {
+                                starred = true;
+                            }
+
                             if (id !== '') {
-                                reduced[id] = complete;
+                                reduced[id] = {
+                                    complete,
+                                    starred,
+                                };
                             }
 
                             return reduced;
