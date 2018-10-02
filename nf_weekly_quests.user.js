@@ -275,6 +275,15 @@
                 'SUGAR_BEAST_1',
             ],
         },
+        {
+            title: 'Week Six',
+            quests: [
+                'BATCAVE_2',
+                'CAFFEINE_1',
+                'RECIPE_2',
+                'BOSS_DOMS',
+            ],
+        },
     ];
 
     const QUESTS = {
@@ -452,6 +461,34 @@
             xp: 60,
             description: '<p>Steps to complete this Sugar Level 1 quest:  First, make sure you are well stocked with a couple of your favorite fruits. Second, whenever you feel a sugar craving from candy, chocolate, dessert, sugary drinks, etc – reach for and consume your favorite fruit instead. Defeat 5 cravings in this manner and you’ve completed this quest. For this stage of our process, we are going to accept the sugar in the fruit consumption as a healthy alternative in order to establish better habits and routines around food and sugar in general.</p>',
             classes: 'academy nutrition',
+        },
+        BATCAVE_2: {
+            title: 'Mindset: NaNaNaNaNa BATCAVE! #2',
+            id: 1026937,
+            xp: 25,
+            description: '<p>To complete this quest, make another upgrade to your home that makes it easier to maintain the new habits you’ve been building. This quest should be completed at least one month after the previous Batcave quest and after those changes are now standard.</p>',
+            classes: 'academy mindset',
+        },
+        CAFFEINE_1: {
+            title: 'Nutrition: I Can’t Live Without Caffeine #1',
+            id: 1027090,
+            xp: 40,
+            description: '<p>To complete this quest, first, find your alternative to caffeinated drinks. This may mean seeking out and trying several types and varieties of decaf black coffee and tea. Find something that you can at least start substituting as an alternative.</p>',
+            classes: 'academy nutrition',
+        },
+        RECIPE_2: {
+            title: 'Nutrition: Try a Nerd Fitness Recipe #2',
+            id: 1027066,
+            xp: 25,
+            description: '<p>Try two new Nerd Fitness recipes. Choose from the Nerd Fitness Recipes page.</p>',
+            classes: 'academy nutrition',
+        },
+        BOSS_DOMS: {
+            title: 'Fitness: Defeat Boss: General DOMS',
+            id: 1027247,
+            xp: 25,
+            description: '<p>To complete this quest, you need to defeat the Bodyweight Level 1 workout boss, General DOMS!</p>',
+            classes: 'academy fitness',
         },
     };
 })();
