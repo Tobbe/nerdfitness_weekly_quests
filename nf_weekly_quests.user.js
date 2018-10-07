@@ -281,6 +281,16 @@
                 'DIET_LEVEL_UP',
             ],
         },
+        {
+            title: 'Week Eight',
+            quests: [
+                'SLEEP_JOURNAL',
+                'SMILE_MORE',
+                'VEGGIE_POWERED',
+                'HATE_VEGETABLES_1',
+                'JUMP_ROPE_1',
+            ],
+        },
     ];
 
     const QUESTS = {
@@ -514,6 +524,41 @@
             xp: 25,
             description: '<p>To complete this quest, eat at the NF Diet Level 2 for at least one week.</p>',
             classes: 'academy nutrition',
+        },
+        SLEEP_JOURNAL: {
+            title: 'Mindset: Keep a Sleep Journal',
+            id: 1026955,
+            xp: 25,
+            description: '<p>To complete this quest, look over your sleep journal and make two changes to your sleep strategy.</p>',
+            classes: 'academy mindset',
+        },
+        SMILE_MORE: {
+            title: 'Mindset: Smile More',
+            id: 1026982,
+            xp: 25,
+            description: '<p>To complete this quest, harness the power of your smile and use it to power up your confidence! 5 times a day for the next week, remind yourself to smile. Thinking of your most recent big win or a happy memory can help (just like summoning a patronus)! To practice smiling a friendly, genuine smile stand in front of a mirror, close your eyes, and look down. Look up, smile, and open your eyes at the same time.</p>',
+            classes: 'academy mindset',
+        },
+        VEGGIE_POWERED: {
+            title: 'Nutrition: Veggie Powered!',
+            id: 1031995,
+            xp: 25,
+            description: '<p>Every single day, for an entire week, you need to eat at least one vegetable per day. The more green and leafy, the better! Bonus: Switch it up. Make it a new or different vegetable each day!</p>',
+            classes: 'academy nutrition',
+        },
+        HATE_VEGETABLES_1: {
+            title: 'Nutrition: I Hate Vegetables #1',
+            id: 1027111,
+            xp: 40,
+            description: '<p>To complete this quest, eat a vegetable at least once a day for a week.</p>',
+            classes: 'academy nutrition',
+        },
+        JUMP_ROPE_1: {
+            title: 'Fitness: Jump Rope #1',
+            id: 1027309,
+            xp: 25,
+            description: '<p>To complete this quest, jump rope (single unders) for 30 seconds without stopping.</p>',
+            classes: 'academy fitness',
         },
     };
 })();
