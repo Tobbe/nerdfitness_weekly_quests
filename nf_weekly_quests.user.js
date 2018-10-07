@@ -9,7 +9,6 @@
 // @resource     icon https://i.imgur.com/Q8fA1gf.png
 // @run-at       document-start
 // @grant        GM_getResourceURL
-// @grant        GM_addStyle
 // ==/UserScript==
 
 (function() {
