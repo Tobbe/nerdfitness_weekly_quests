@@ -284,6 +284,15 @@
                 'BOSS_DOMS',
             ],
         },
+        {
+            title: 'Week Seven',
+            quests: [
+                'COURAGE_20_SECONDS',
+                'STOP_SLOUCHING_WALL_CHALLENGE',
+                'ALCOHOL',
+                'DIET_LEVEL_UP',
+            ],
+        },
     ];
 
     const QUESTS = {
@@ -489,6 +498,34 @@
             xp: 25,
             description: '<p>To complete this quest, you need to defeat the Bodyweight Level 1 workout boss, General DOMS!</p>',
             classes: 'academy fitness',
+        },
+        COURAGE_20_SECONDS: {
+            title: 'Mindset: 20 Seconds of Courage?',
+            id: 1026946,
+            xp: 100,
+            description: '<p>To complete this quest, do one thing that you have always wanted to do but were too scared – no matter how small! This could be signing up to run a 5k or asking someone out on a date! 20 seconds of courage!</p>',
+            classes: 'academy mindset',
+        },
+        STOP_SLOUCHING_WALL_CHALLENGE: {
+            title: 'Mindset: Stop Slouching Wall Challenge',
+            id: 1026970,
+            xp: 25,
+            description: '<p>Start by standing with your heels, butt, and head against a wall. Pull your shoulder blades back until they’re touching the wall too. Do this for 30 seconds in the morning and the evening for one week to get started!</p>',
+            classes: 'academy mindset',
+        },
+        ALCOHOL: {
+            title: 'Nutrition: Can I Still Drink Alcohol?',
+            id: 1027099,
+            xp: 40,
+            description: '<p>To complete this quest, follow the steps listed in the Alcohol page to develop a healthy plan for drinking for: 1. Every Day 2. The next party you are going to.</p>',
+            classes: 'academy nutrition',
+        },
+        DIET_LEVEL_UP: {
+            title: 'Nutrition: NF Diet Level 2',
+            id: 1027135,
+            xp: 25,
+            description: '<p>To complete this quest, eat at the NF Diet Level 2 for at least one week.</p>',
+            classes: 'academy nutrition',
         },
     };
 })();
