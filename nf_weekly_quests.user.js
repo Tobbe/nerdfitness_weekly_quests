@@ -115,15 +115,10 @@
     let statusesPromise = undefined;
 
     if (weeklyQuestsPage()) {
-        console.log('Replace page');
         document.title = 'Weekly Quests';
 
         statusesPromise = getQuestStatuses();
     }
-
-    console.log('NF Weekly Quests');
-    console.log('location.href', window.location.href);
-    console.log('document.referrer', document.referrer);
 
     function generateQuestBoxesHtml(questStatuses) {
         let questBoxesHtml = '';
@@ -150,10 +145,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function(event) {
-        console.log('DOM fully loaded and parsed');
-
         if (loggedInPage()) {
-            console.log('logged in page');
             addMenuItem();
         }
 
@@ -181,8 +173,6 @@
             fetch(url)
                 .then(data => data.json())
                 .then(res => {
-                    console.log('got all academy quests');
-
                     const quests = res.html.split('<?php');
                     const questStatuses = quests
                         .reduce((reduced, quest) => {
@@ -210,7 +200,6 @@
                             return reduced;
                         }, {});
 
-                    console.log('questStatuses', questStatuses);
                     resolve(questStatuses);
                 })
                 .catch(err => {
