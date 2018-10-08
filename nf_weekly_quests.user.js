@@ -349,6 +349,15 @@
                 'CHECK_LABEL',
             ],
         },
+        {
+            title: 'Week Ten',
+            quests: [
+                'CONFIDENT',
+                'RECIPE_3',
+                'SPICES',
+                'GROCERY_STORE',
+            ],
+        },
     ];
 
     const QUESTS = {
@@ -637,6 +646,34 @@
             id: 1027051,
             xp: 25,
             description: '<p>Check the label of everything you consume for one week to look at portion sizes and ingredients.</p>',
+            classes: 'academy nutrition',
+        },
+        CONFIDENT: {
+            title: 'Mindset: What are you confident in?',
+            id: 1026991,
+            xp: 25,
+            description: '<p>To complete this quest, think about what you are most confident in right now. What do people compliment you on the most? Once you’ve figured this out, make a statement about yourself based on the impression you want to give to other people. For example, if people have complimented your laugh, you could remind yourself that: "I\'m a happy person. People notice that and enjoy being around me because that feeling is contagious."</p>',
+            classes: 'academy mindset',
+        },
+        RECIPE_3: {
+            title: 'Nutrition: Try a Nerd Fitness Recipe #3',
+            id: 1027069,
+            xp: 25,
+            description: '<p>Round 3! Try two new Nerd Fitness recipes or experiment with an old one. Choose from the Nerd Fitness Recipes page.</p>',
+            classes: 'academy nutrition',
+        },
+        SPICES: {
+            title: 'Nutrition: Spice Things Up!',
+            id: 1027126,
+            xp: 25,
+            description: '<p>To complete this quest, choose spices from “the core six” and add them to a meal you are making.</p>',
+            classes: 'academy nutrition',
+        },
+        GROCERY_STORE: {
+            title: 'Nutrition: Navigate a Grocery Store',
+            id: 1027102,
+            xp: 40,
+            description: '<p>To complete this quest, create a grocery store map to help you navigate the store!</p>',
             classes: 'academy nutrition',
         },
     };
