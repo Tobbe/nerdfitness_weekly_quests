@@ -286,7 +286,6 @@
             quests: [
                 'SLEEP_JOURNAL',
                 'SMILE_MORE',
-                'VEGGIE_POWERED',
                 'HATE_VEGETABLES_1',
                 'JUMP_ROPE_1',
             ],
@@ -538,13 +537,6 @@
             xp: 25,
             description: '<p>To complete this quest, harness the power of your smile and use it to power up your confidence! 5 times a day for the next week, remind yourself to smile. Thinking of your most recent big win or a happy memory can help (just like summoning a patronus)! To practice smiling a friendly, genuine smile stand in front of a mirror, close your eyes, and look down. Look up, smile, and open your eyes at the same time.</p>',
             classes: 'academy mindset',
-        },
-        VEGGIE_POWERED: {
-            title: 'Nutrition: Veggie Powered!',
-            id: 1031995,
-            xp: 25,
-            description: '<p>Every single day, for an entire week, you need to eat at least one vegetable per day. The more green and leafy, the better! Bonus: Switch it up. Make it a new or different vegetable each day!</p>',
-            classes: 'academy nutrition',
         },
         HATE_VEGETABLES_1: {
             title: 'Nutrition: I Hate Vegetables #1',
