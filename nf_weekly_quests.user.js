@@ -358,6 +358,16 @@
                 'GROCERY_STORE',
             ],
         },
+        {
+            title: 'Week Eleven',
+            quests: [
+                'DIET_LEVEL_3',
+                'CAFFEINE_2',
+                'CONVERSATION_STARTER',
+                'GYM_WORKOUT',
+                'HOME_WORKOUT',
+            ],
+        },
     ];
 
     const QUESTS = {
@@ -675,6 +685,41 @@
             xp: 40,
             description: '<p>To complete this quest, create a grocery store map to help you navigate the store!</p>',
             classes: 'academy nutrition',
+        },
+        DIET_LEVEL_3: {
+            title: 'Nutrition: NF Diet Level 3',
+            id: 1027138,
+            xp: 25,
+            description: '<p>To complete this quest, eat at the NF Diet Level 3 for at least one week.</p>',
+            classes: 'academy nutrition',
+        },
+        CAFFEINE_2: {
+            title: 'Nutrition: I Can’t Live Without Caffeine #2',
+            id: 1027093,
+            xp: 75,
+            description: '<p>Two days a week (pick and schedule which days), you will only drink caffeine from your new alternative support. After a few weeks, step this up to 3-4 times a week.</p>',
+            classes: 'academy nutrition',
+        },
+        CONVERSATION_STARTER: {
+            title: 'Mindset: Conversation Starter',
+            id: 1026988,
+            xp: 60,
+            description: '<p>To complete this quest, start 3 conversations with strangers. Don’t give yourself more than 3 seconds before approaching and saying hello – get the awkwardness out of the way immediately, and you’ll come across as cool and collected!  Try talking to cashiers, people sharing an elevator with you, strangers at a party, or people waiting in line beside you. If you feel out of place in a situation, everybody around you probably does too – they might even be secretly grateful that you were confident enough to break the ice!</p>',
+            classes: 'academy mindset',
+        },
+        GYM_WORKOUT: {
+            title: 'Fitness: Complete a Gym Workout',
+            id: 1027300,
+            xp: 25,
+            description: '<p>Complete one of your workouts (from your path) at a local Gym. If you don’t have a membership, visit a gym for a free trial! </p>',
+            classes: 'academy fitness',
+        },
+        HOME_WORKOUT: {
+            title: 'Fitness: Complete a Home Workout',
+            id: 1027288,
+            xp: 25,
+            description: '<p>Complete one of your scheduled workouts in the comfort of your own home. If you are doing the gym workouts and don’t have the gear at home, switch and do a workout from the bodyweight path at home in place of one of your workouts.</p>',
+            classes: 'academy fitness',
         },
     };
 })();
