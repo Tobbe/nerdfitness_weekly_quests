@@ -368,6 +368,15 @@
                 'HOME_WORKOUT',
             ],
         },
+        {
+            title: 'Week Twelve',
+            quests: [
+                'BATCAVE_4',
+                'MEDITATION_CHALLENGE',
+                'IDENTIFY_DEMONS',
+                'NERD_FITNESS_PANTRY',
+            ],
+        },
     ];
 
     const QUESTS = {
@@ -720,6 +729,34 @@
             xp: 25,
             description: '<p>Complete one of your scheduled workouts in the comfort of your own home. If you are doing the gym workouts and don’t have the gear at home, switch and do a workout from the bodyweight path at home in place of one of your workouts.</p>',
             classes: 'academy fitness',
+        },
+        BATCAVE_4: {
+            title: 'Mindset: NaNaNaNaNa BATCAVE! #4',
+            id: 1026964,
+            xp: 25,
+            description: '<p>To complete this quest, make another upgrade to your home that makes it easier to maintain the new habits you’ve been building. This quest should be completed at least one month after the previous Batcave quest and after those changes are now standard.</p>',
+            classes: 'academy mindset',
+        },
+        MEDITATION_CHALLENGE: {
+            title: 'Mindset: Meditation Challenge',
+            id: 1027012,
+            xp: 60,
+            description: '<p>Today we’re issuing a meditation challenge: Commit to meditating every day, for two weeks straight (using an app, website, or guided meditation if you wish). It can just be for five minutes. Or two minutes. The important part is establishing the new habit.</p>',
+            classes: 'academy mindset',
+        },
+        IDENTIFY_DEMONS: {
+            title: 'Mindset: Identify Your Demons',
+            id: 1027000,
+            xp: 40,
+            description: '<p>To complete this quest, identify the battle you’d like to tackle with the skywalker method. What is it? Take a deep look and figure out what you’d like to change.  This part can suck &mdash; it requires 100% honesty with yourself and owning up to what’s really at the root of the issue.</p>',
+            classes: 'academy mindset',
+        },
+        NERD_FITNESS_PANTRY: {
+            title: 'Nutrition: Try the Nerd Fitness Pantry',
+            id: 1027129,
+            xp: 25,
+            description: '<p>To complete this quest, go through the Level Up Your Pantry and bring your pantry to the next level (If Level 0, bring it to Level 1 – if already at level 1, bring to level 2)</p>',
+            classes: 'academy nutrition',
         },
     };
 })();
