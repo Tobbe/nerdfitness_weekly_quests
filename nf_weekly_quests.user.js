@@ -328,7 +328,7 @@
                 'COURAGE_20_SECONDS',
                 'STOP_SLOUCHING_WALL_CHALLENGE',
                 'ALCOHOL',
-                'DIET_LEVEL_UP',
+                'DIET_LEVEL_2',
             ],
         },
         {
@@ -585,7 +585,7 @@
             description: '<p>To complete this quest, follow the steps listed in the Alcohol page to develop a healthy plan for drinking for: 1. Every Day 2. The next party you are going to.</p>',
             classes: 'academy nutrition',
         },
-        DIET_LEVEL_UP: {
+        DIET_LEVEL_2: {
             title: 'Nutrition: NF Diet Level 2',
             id: 1027135,
             xp: 25,
