@@ -340,6 +340,15 @@
                 'JUMP_ROPE_1',
             ],
         },
+        {
+            title: 'Week Nine',
+            quests: [
+                'BATCAVE_3',
+                'DURING_PHOTOS_2',
+                'SUGAR_BEAST_2',
+                'CHECK_LABEL',
+            ],
+        },
     ];
 
     const QUESTS = {
@@ -601,6 +610,34 @@
             xp: 25,
             description: '<p>To complete this quest, jump rope (single unders) for 30 seconds without stopping.</p>',
             classes: 'academy fitness',
+        },
+        BATCAVE_3: {
+            title: 'Mindset: NaNaNaNaNa BATCAVE! #3',
+            id: 1026940,
+            xp: 25,
+            description: '<p>To complete this quest, make another upgrade to your home that makes it easier to maintain the new habits you’ve been building. This quest should be completed at least one month after the previous Batcave quest and after those changes are now standard.</p>',
+            classes: 'academy mindset',
+        },
+        DURING_PHOTOS_2: {
+            title: 'Mindset: Take Your During Photos and Measurements #2',
+            id: 1026875,
+            xp: 25,
+            description: '<p>This is a repeat of the “Snap Those Before Photos!” Quest – only to be completed two months into your journey.</p>',
+            classes: 'academy mindset',
+        },
+        SUGAR_BEAST_2: {
+            title: 'Nutrition: Defeat the Sugar Beast #2',
+            id: 1027084,
+            xp: 120,
+            description: '<p>To complete this quest: In addition to your food log, start noting how much sugar you are consuming (counting your fruit of course) for at least one week. Consult a list of low sugar fruits and compare your current food log to the table. Identify alternatives fruits to replace the ones in your diet with the highest sugar content.</p>',
+            classes: 'academy nutrition',
+        },
+        CHECK_LABEL: {
+            title: 'Nutrition: Check the Label',
+            id: 1027051,
+            xp: 25,
+            description: '<p>Check the label of everything you consume for one week to look at portion sizes and ingredients.</p>',
+            classes: 'academy nutrition',
         },
     };
 })();
