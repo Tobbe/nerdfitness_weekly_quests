@@ -615,7 +615,7 @@
             title: 'Mindset: Keep a Sleep Journal',
             id: 1026955,
             xp: 25,
-            description: '<p>To complete this quest, look over your sleep journal and make two changes to your sleep strategy.</p>',
+            description: '<p>To complete this quest, keep a sleep journal for one week.</p>',
             classes: 'academy mindset',
         },
         SMILE_MORE: {
